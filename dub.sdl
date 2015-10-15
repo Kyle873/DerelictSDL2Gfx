@@ -1,4 +1,4 @@
-name "derelictsdl2gfx"
+name "derelict-sdl2_gfx"
 description "A binding to the SDL2_gfx library"
 copyright "Copyright © 2015, Kyle Belanger"
 authors "Kyle873"
