@@ -1,0 +1,6 @@
+name "derelictsdl2gfx"
+description "A binding to the SDL2_gfx library"
+copyright "Copyright © 2015, Kyle Belanger"
+authors "Kyle873"
+dependency "derelict-sdl2" version="~>1.9.7"
+targetType "library"
