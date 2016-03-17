@@ -4,6 +4,8 @@ import derelict.util.system;
 import derelict.util.loader;
     
 import derelict.sdl2.gfx.primitives;
+import derelict.sdl2.gfx.framerate;
+import derelict.sdl2.gfx.rotozoom;
 
 private
 {
@@ -140,6 +142,23 @@ class DerelictSDL2GfxLoader : SharedLibLoader
 		bindFunc(cast(void **)&characterRGBA, "characterRGBA");
 		bindFunc(cast(void **)&stringColor, "stringColor");
 		bindFunc(cast(void **)&stringRGBA, "stringRGBA");
+
+        // Surface Rotozoomer
+        bindFunc(cast(void **)&rotateSurface90Degrees, "rotateSurface90Degrees");
+        bindFunc(cast(void **)&rotozoomSurfaceSizeXY, "rotozoomSurfaceSizeXY");
+        bindFunc(cast(void **)&rotozoomSurfaceSize, "rotozoomSurfaceSize");
+        bindFunc(cast(void **)&rotozoomSurface, "rotozoomSurface");
+        bindFunc(cast(void **)&rotozoomSurfaceXY, "rotozoomSurfaceXY");
+        bindFunc(cast(void **)&zoomSurfaceSize, "zoomSurfaceSize");
+        bindFunc(cast(void **)&zoomSurface, "zoomSurface");
+        bindFunc(cast(void **)&shrinkSurface, "shrinkSurface");
+
+        // Framerate control
+        bindFunc(cast(void **)&SDL_initFramerate, "SDL_initFramerate");
+        bindFunc(cast(void **)&SDL_setFramerate, "SDL_setFramerate");
+        bindFunc(cast(void **)&SDL_getFramerate, "SDL_getFramerate");
+        bindFunc(cast(void **)&SDL_getFramecount, "SDL_getFramecount");
+        bindFunc(cast(void **)&SDL_framerateDelay, "SDL_framerateDelay");
     }
 }
 
