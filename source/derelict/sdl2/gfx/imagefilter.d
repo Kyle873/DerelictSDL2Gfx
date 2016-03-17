@@ -16,7 +16,7 @@ extern(C) @nogc nothrow
     alias da_SDL_imageFilterBitOr = int function(ubyte *Src1, ubyte *Src2, ubyte *Dest, uint length);
     alias da_SDL_imageFilterClipToRange = int function(ubyte *Src1, ubyte *Dest, uint length, ubyte Tmin, ubyte Tmax);
     alias da_SDL_imageFilterDiv = int function(ubyte *Src1, ubyte *Src2, ubyte *Dest, uint length);
-    alias da_SDL_imageFilterMMXdetect = int function(void);
+    alias da_SDL_imageFilterMMXdetect = int function();
     alias da_SDL_imageFilterMean = int function(ubyte *Src1, ubyte *Src2, ubyte *Dest, uint length);
     alias da_SDL_imageFilterMult = int function(ubyte *Src1, ubyte *Src2, ubyte *Dest, uint length);
     alias da_SDL_imageFilterMultByByte = int function(ubyte *Src1, ubyte *Dest, uint length, ubyte C);
