@@ -144,7 +144,6 @@ class DerelictSDL2GfxLoader : SharedLibLoader
 		bindFunc(cast(void **)&stringRGBA, "stringRGBA");
 
         // Surface Rotozoomer
-        bindFunc(cast(void **)&transformSurfaceY, "transformSurfaceY");
         bindFunc(cast(void **)&rotateSurface90Degrees, "rotateSurface90Degrees");
         bindFunc(cast(void **)&rotozoomSurfaceSizeXY, "rotozoomSurfaceSizeXY");
         bindFunc(cast(void **)&rotozoomSurfaceSize, "rotozoomSurfaceSize");
