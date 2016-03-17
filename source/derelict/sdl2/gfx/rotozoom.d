@@ -4,7 +4,7 @@ import derelict.sdl2.sdl;
 
 extern(C) @nogc nothrow
 {
-    // Framerate control
+    // Surface Rotozoomer
     alias da_rotateSurface90Degrees = SDL_Surface* function(SDL_Surface *src, int numClockwiseTurns);
     alias da_rotozoomSurfaceSizeXY = void function(int width, int height, double angle, double zoomx, double zoomy, int *dstwidth, int *dstheight);
     alias da_rotozoomSurfaceSize = void function(int width, int height, double angle, double zoom, int *dstwidth, int *dstheight);
@@ -17,7 +17,7 @@ extern(C) @nogc nothrow
 
 __gshared
 {
-    // Framerate control
+    // Surface Rotozoomer
     da_rotateSurface90Degrees rotateSurface90Degrees;
     da_rotozoomSurfaceSizeXY rotozoomSurfaceSizeXY;
     da_rotozoomSurfaceSize rotozoomSurfaceSize;
@@ -27,3 +27,4 @@ __gshared
     da_zoomSurface zoomSurface;
     da_shrinkSurface shrinkSurface;
 }
+
