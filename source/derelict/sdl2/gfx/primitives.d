@@ -237,3 +237,4 @@ __gshared
 	da_stringColor stringColor;
 	da_stringRGBA stringRGBA;
 }
+

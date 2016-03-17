@@ -30,3 +30,4 @@ __gshared
     da_SDL_getFramecount SDL_getFramecount;
     da_SDL_framerateDelay SDL_framerateDelay;
 }
+

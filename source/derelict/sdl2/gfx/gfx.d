@@ -6,6 +6,7 @@ import derelict.util.loader;
 import derelict.sdl2.gfx.primitives;
 import derelict.sdl2.gfx.framerate;
 import derelict.sdl2.gfx.rotozoom;
+import derelict.sdl2.gfx.imagefilter;
 
 private
 {
@@ -143,22 +144,54 @@ class DerelictSDL2GfxLoader : SharedLibLoader
 		bindFunc(cast(void **)&stringColor, "stringColor");
 		bindFunc(cast(void **)&stringRGBA, "stringRGBA");
 
-        // Surface Rotozoomer
-        bindFunc(cast(void **)&rotateSurface90Degrees, "rotateSurface90Degrees");
-        bindFunc(cast(void **)&rotozoomSurfaceSizeXY, "rotozoomSurfaceSizeXY");
-        bindFunc(cast(void **)&rotozoomSurfaceSize, "rotozoomSurfaceSize");
-        bindFunc(cast(void **)&rotozoomSurface, "rotozoomSurface");
-        bindFunc(cast(void **)&rotozoomSurfaceXY, "rotozoomSurfaceXY");
-        bindFunc(cast(void **)&zoomSurfaceSize, "zoomSurfaceSize");
-        bindFunc(cast(void **)&zoomSurface, "zoomSurface");
-        bindFunc(cast(void **)&shrinkSurface, "shrinkSurface");
+                // Surface Rotozoomer
+		bindFunc(cast(void **)&rotateSurface90Degrees, "rotateSurface90Degrees");
+		bindFunc(cast(void **)&rotozoomSurfaceSizeXY, "rotozoomSurfaceSizeXY");
+		bindFunc(cast(void **)&rotozoomSurfaceSize, "rotozoomSurfaceSize");
+		bindFunc(cast(void **)&rotozoomSurface, "rotozoomSurface");
+		bindFunc(cast(void **)&rotozoomSurfaceXY, "rotozoomSurfaceXY");
+		bindFunc(cast(void **)&zoomSurfaceSize, "zoomSurfaceSize");
+		bindFunc(cast(void **)&zoomSurface, "zoomSurface");
+		bindFunc(cast(void **)&shrinkSurface, "shrinkSurface");
 
-        // Framerate control
-        bindFunc(cast(void **)&SDL_initFramerate, "SDL_initFramerate");
-        bindFunc(cast(void **)&SDL_setFramerate, "SDL_setFramerate");
-        bindFunc(cast(void **)&SDL_getFramerate, "SDL_getFramerate");
-        bindFunc(cast(void **)&SDL_getFramecount, "SDL_getFramecount");
-        bindFunc(cast(void **)&SDL_framerateDelay, "SDL_framerateDelay");
+		// Framerate control
+		bindFunc(cast(void **)&SDL_initFramerate, "SDL_initFramerate");
+		bindFunc(cast(void **)&SDL_setFramerate, "SDL_setFramerate");
+		bindFunc(cast(void **)&SDL_getFramerate, "SDL_getFramerate");
+		bindFunc(cast(void **)&SDL_getFramecount, "SDL_getFramecount");
+		bindFunc(cast(void **)&SDL_framerateDelay, "SDL_framerateDelay");
+
+		// MMX image filters
+		bindFunc(cast(void **)&SDL_imageFilterAbsDiff, "SDL_imageFilterAbsDiff");
+		bindFunc(cast(void **)&SDL_imageFilterAdd, "SDL_imageFilterAdd");
+		bindFunc(cast(void **)&SDL_imageFilterAddByte, "SDL_imageFilterAddByte");
+		bindFunc(cast(void **)&SDL_imageFilterAddByteToHalf, "SDL_imageFilterAddByteToHalf");
+		bindFunc(cast(void **)&SDL_imageFilterAddUint, "SDL_imageFilterAddUint");
+		bindFunc(cast(void **)&SDL_imageFilterBinarizeUsingThreshold, "SDL_imageFilterBinarizeUsingThreshold");
+		bindFunc(cast(void **)&SDL_imageFilterBitAnd, "SDL_imageFilterBitAnd");
+		bindFunc(cast(void **)&SDL_imageFilterBitNegation, "SDL_imageFilterBitNegation");
+		bindFunc(cast(void **)&SDL_imageFilterBitOr, "SDL_imageFilterBitOr");
+		bindFunc(cast(void **)&SDL_imageFilterClipToRange, "SDL_imageFilterClipToRange");
+		bindFunc(cast(void **)&SDL_imageFilterDiv, "SDL_imageFilterDiv");
+		bindFunc(cast(void **)&SDL_imageFilterMMXdetect, "SDL_imageFilterMMXdetect");
+		bindFunc(cast(void **)&SDL_imageFilterMMXoff, "SDL_imageFilterMMXoff");
+		bindFunc(cast(void **)&SDL_imageFilterMMXon, "SDL_imageFilterMMXon");
+		bindFunc(cast(void **)&SDL_imageFilterMean, "SDL_imageFilterMean");
+		bindFunc(cast(void **)&SDL_imageFilterMult, "SDL_imageFilterMult");
+		bindFunc(cast(void **)&SDL_imageFilterMultByByte, "SDL_imageFilterMultByByte");
+		bindFunc(cast(void **)&SDL_imageFilterMultDivby2, "SDL_imageFilterMultDivby2");
+		bindFunc(cast(void **)&SDL_imageFilterMultDivby4, "SDL_imageFilterMultDivby4");
+		bindFunc(cast(void **)&SDL_imageFilterMultNor, "SDL_imageFilterMultNor");
+		bindFunc(cast(void **)&SDL_imageFilterNormalizeLinear, "SDL_imageFilterNormalizeLinear");
+		bindFunc(cast(void **)&SDL_imageFilterShiftLeft, "SDL_imageFilterShiftLeft");
+		bindFunc(cast(void **)&SDL_imageFilterShiftLeftByte, "SDL_imageFilterShiftLeftByte");
+		bindFunc(cast(void **)&SDL_imageFilterShiftLeftUint, "SDL_imageFilterShiftLeftUint");
+		bindFunc(cast(void **)&SDL_imageFilterShiftRight, "SDL_imageFilterShiftRight");
+		bindFunc(cast(void **)&SDL_imageFilterShiftRightAndMultByByte, "SDL_imageFilterShiftRightAndMultByByte");
+		bindFunc(cast(void **)&SDL_imageFilterShiftRightUint, "SDL_imageFilterShiftRightUint");
+		bindFunc(cast(void **)&SDL_imageFilterSub, "SDL_imageFilterSub");
+		bindFunc(cast(void **)&SDL_imageFilterSubByte, "SDL_imageFilterSubByte");
+		bindFunc(cast(void **)&SDL_imageFilterSubUint, "SDL_imageFilterSubUint");
     }
 }
 
@@ -168,3 +201,4 @@ shared static this()
 {
     DerelictSDL2Gfx = new DerelictSDL2GfxLoader();
 }
+
