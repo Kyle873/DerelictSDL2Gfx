@@ -29,8 +29,8 @@ extern(C) @nogc nothrow
     alias da_boxRGBA = int function(SDL_Renderer *, short, short, short, short, int, int, int, int);
 
 	// Rounded-Corner Filled rectangle (Box)
-	alias da_roundedBoxColor = int function(SDL_Renderer *, short, short, short, short, uint);
-    alias da_roundedBoxRGBA = int function(SDL_Renderer *, short, short, short, short, int, int, int, int);
+	alias da_roundedBoxColor = int function(SDL_Renderer *, short, short, short, short, short, uint);
+    alias da_roundedBoxRGBA = int function(SDL_Renderer *, short, short, short, short, short, int, int, int, int);
 
 	// Line
 	alias da_lineColor = int function(SDL_Renderer *, short, short, short, short, uint);
